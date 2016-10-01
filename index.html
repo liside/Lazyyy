@@ -138,13 +138,20 @@
               </div>
             </div>
             <div class="maps-frame mdl-cell mdl-cell--12-col">
-              <script>
-                $.getJSON("http://freegeoip.net/json/?callback=?", function(data){
-                  console.log("Lat: " + data.latitude + " Long: " + data.longitude);
-                  $("#mapframe").attr("src", "https://www.google.com/maps/embed/v1/directions?origin="+data.latitude+","+data.longitude+"&destination=SDSU&key=AIzaSyDp1ey8ETTNdh9I_VeSpkpDCQPMB4e2Y2o");
-                });
-
-              </script>
+	    <script>
+		// get current ip address
+		$.getJSON("http://freegeoip.net/json/?callback=?", function(data){
+			console.log("Lat: " + data.latitude + " Long: " + data.longitude);
+			// inject the lat and long into the src and make api calls
+			$("#mapframe").attr("src", "https://www.google.com/maps/embed/v1/directions?origin="+
+				data.latitude + "," + data.longitude + "&destination=SDSU&key=AIzaSyDp1ey8ETTNdh9I_VeSpkpDCQPMB4e2Y2o");
+			$.getJSON("https://maps.googleapis.com/maps/api/distancematrix/json?units=imperial&origins="+
+				data.latitude + "," + data.longitude + "&destinations=SDSU&key=AIzaSyDp1ey8ETTNdh9I_VeSpkpDCQPMB4e2Y2o", function(data){
+				// get the duration in seconds
+				console.log(data.duration.value);
+				});
+		});				
+		</script>
               <iframe id = "mapframe" width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/directions?origin=UCSD&destination=SDSU&key=AIzaSyDp1ey8ETTNdh9I_VeSpkpDCQPMB4e2Y2o" allowfullscreen>
               </iframe>
             </div>
