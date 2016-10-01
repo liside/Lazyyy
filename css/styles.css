@@ -236,3 +236,10 @@ html, body {
 .mdl-demo .mdl-menu__container {
   z-index: 99;
 }
+
+#header{
+  background-image: url("../images/cover.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-y: -25vw;
+}
