@@ -21,7 +21,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <title>Material Design Lite</title>
+    <title>Lazy</title>
 
     <!-- Add to homescreen for Chrome on Android -->
     <meta name="mobile-web-app-capable" content="yes">
@@ -87,6 +87,7 @@
           <a href="#features" class="mdl-layout__tab">Details</a>
           <a href="#features" class="mdl-layout__tab">Technology</a>
           <a href="#features" class="mdl-layout__tab">FAQ</a>
+          <!-- the add button-->
           <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect mdl-button--colored mdl-shadow--4dp mdl-color--accent red" id="add">
             <i class="material-icons" role="presentation">add</i>
             <span class="visuallyhidden">Add</span>
@@ -192,6 +193,7 @@
             </div>
           </section>
         </div>
+    
         <div class="mdl-layout__tab-panel" id="features">
           <section class="section--center mdl-grid mdl-grid--no-spacing">
             <div class="mdl-cell mdl-cell--12-col">
@@ -247,11 +249,40 @@
             </div>
           </section>
         </div>
-        <!-- selection box -->
-        <label for="id_label_multiple">
-        	multiple select element
-        	<select class="js-example-basic-multiple js-states form-control" id="id_label_multiple" multiple="multiple"></select>
-        </label>
+        <div class="row">
+          <form class="col s12">
+          	<div class="row">
+          	  <div class="input-field col s6">
+          	  	<input id="from" type="text" class="validate">
+          	  	<label for="from">From:</label>
+              </div>
+              <div class="input-field col s6">
+          	    <input id="to" type="text" class="validate">
+          	    <label for="to">To:</label>
+          	  </div>
+          	</div>
+          	<div class="input-field col s12">
+          	  <script type="text/javascript">
+          	    $(document).ready(function() {
+          	      $('select').material_select();
+          	    });
+          	  </script>
+          	  <select multiple>
+          	  	<optgroup label="team 1">
+          	  	  <option value="1">Option 1</option>
+          	  	  <option value="2">Option 2</option>
+          	  	</optgroup>
+          	  	<optgroup label="team 2">
+          	  	  <option value="3">Option 3</option>
+          	  	  <option value="4">Option 4</option>
+          	  	</optgroup>
+          	  </select>
+          	  <label>Optgroups</label>
+          	</div>
+          </form>
+    
+  </div>
+        
         <footer class="mdl-mega-footer">
           <div class="mdl-mega-footer--middle-section">
             <div class="mdl-mega-footer--drop-down-section">
