@@ -80,7 +80,7 @@
         <div class="mdl-layout--large-screen-only mdl-layout__header-row">
         </div>
         <div class="mdl-layout--large-screen-only mdl-layout__header-row">
-          <h3>Lazyyy</h3>
+          <h1 style="font-family: lazyyyfont">Lazyyy</h1>
         </div>
         <div class="mdl-layout--large-screen-only mdl-layout__header-row">
         </div>
@@ -106,6 +106,7 @@
                       <input placeholder="" id="from-text" type="text" class="validate">
                       <label for="from-text">From</label>
                     </div>
+
                     <div class="input-field col l4 m6 s12">
                       <i class="material-icons prefix">my_location</i>
                       <input placeholder="" id="to-text" type="text" class="validate">
@@ -115,28 +116,29 @@
                     <div class="input-field col l4 m6 s12">
                       <i class="material-icons prefix">av_timer</i>
                       <input id="time-text" type="time" class="validate">
-                      
                     </div>
 
                     <div class="input-field col s12">
                       <div class="mdl-card__supporting-text">
-                        <h4>AND I Also Want To:</h4>
-                        Please provide us with your requirements before trip and means of transportations.
+                        <h2 style="font-family: lazyyyfont">IF I Also Want To:</h2>
+                        <select id="ifs" class="js-example-basic-multiple validate" multiple="multiple" style="width: 100%">
+                          <optgroup label="Things To Do">
+                            <option value="1">Shower</option>
+                            <option value="2">Breakfast</option>
+                          </optgroup>
+                          <optgroup label="Transportation">
+                            <option value="3">Bus</option>
+                            <option value="4">Uber</option>
+                          </optgroup>
+                        </select>
+                        <br>
+                        <br>
+                        <a class="mdl-cell--3-col btn-large orange accent-2" id="help" style="width: 100%">HELP MEOW!!!</a>
                       </div>
-                      <select id="ifs" class="js-example-basic-multiple validate" multiple="multiple" style="width: 100%">
-                        <optgroup label="Things To Do">
-                          <option value="1">Shower</option>
-                          <option value="2">Breakfast</option>
-                        </optgroup>
-                        <optgroup label="Transportation">
-                          <option value="3">Bus</option>
-                          <option value="4">Uber</option>
-                        </optgroup>
-                      </select>
                     </div>
+
                   </div>
                 </form>
-                <a class="mdl-cell--3-col waves-effect waves-light btn-large" style="width: 100%;">HELP MEOW!!!</a>
               </div>
             </div>
             <div class="maps-frame mdl-cell mdl-cell--12-col">
@@ -151,11 +153,12 @@
             <div class="mdl-card mdl-cell--12-col">
           
           <div class="mdl-card__supporting-text" id="formheader">
-                <h1>FAQ</h1>
+                <h1 style="font-family: faqfont">FAQ</h1>
+                We know that you are lazy like us and won't look it through, but meow, just in case~
               </div>
           <ul class="collapsible" data-collapsible="accordion">
             <li>
-              <div class="collapsible-header"><i class="material-icons">whatshot</i>What is this app about?</div>
+              <div class="collapsible-header active"><i class="material-icons">whatshot</i>What is this app about?</div>
               <div class="collapsible-body"><p>This is a super convenient trip planner. All you need to do is to tell us how tight your schedule is, what you want to do before leaving, and your preferred transportation options. We will handle the rest of the work for you!</p></div>
             </li>
             <li>
@@ -183,7 +186,7 @@
 	
 
     <div class="fixed-action-btn vertical" style="bottom: 10%; right: 5%;">
-      <div class="btn-floating btn-large red">
+      <div class="btn-floating btn-large orange accent-2">
         <i class="large material-icons" id="query">query_builder</i>
       </div>
       <ul>

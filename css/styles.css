@@ -243,3 +243,13 @@ html, body {
   background-size: cover;
   background-position-y: -25vw;
 }
+
+@font-face {
+  font-family: faqfont;
+  src: url(../fonts/LeckerliOne-Regular.ttf);
+}
+
+@font-face {
+  font-family: lazyyyfont;
+  src: url(../fonts/Grinched.ttf);
+}
