@@ -336,6 +336,11 @@
         </footer--->
       </main>
 	  <div class="maps-frame">
+	    <script>
+		$.getJSON("http://freegeoip.net/json/?callback=?", function(data){
+			alert("Lat: " + data.latitude + " Long: " + data.longitude);
+		});
+		</script>
 		<iframe width="600" height="450" frameborder="0" style="border:0"src="https://www.google.com/maps/embed/v1/directions?origin=UCSD&destination=SDSU&key=AIzaSyDp1ey8ETTNdh9I_VeSpkpDCQPMB4e2Y2o" allowfullscreen>
 		</iframe>
 		</div>
