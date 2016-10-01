@@ -185,7 +185,7 @@
     </div>
 	
 
-    <div class="fixed-action-btn vertical" style="bottom: 10%; right: 5%;">
+    <div class="fixed-action-btn vertical" style="bottom: 5%; right: 5%;">
       <div class="btn-floating btn-large orange accent-2">
         <i class="large material-icons" id="query">query_builder</i>
       </div>
@@ -231,25 +231,28 @@
       google.maps.event.addListener(autocomplete2, 'place_changed', function(){
         updateMap($("#from-text").val(), $("#to-text").val());
       });
+      
+      $.getJSON("http://freegeoip.net/json/?callback=?", function(data){
+        updateMap(data.latitude + ',' + data.longitude, 'UCSD');
+        var geocoder  = new google.maps.Geocoder(); 
+        var location  = new google.maps.LatLng(data.latitude, data.longitude); 
+
+        geocoder.geocode({'latLng': location}, function(results, status) {
+          window.parent.$('#from-text').val(results[0].formatted_address); 
+        });
+        //window.parent.$('#from-text').val(data.latitude + ',' + data.longitude); 
+        window.parent.$('#to-text').val("University of California San Diego, 9500 Gilman Drive, La Jolla, CA 92093"); 
+      });
     };
 
-    $.getJSON("http://freegeoip.net/json/?callback=?", function(data){
-
-      updateMap(data.latitude + ',' + data.longitude, 'UCSD');
-      var geocoder  = new google.maps.Geocoder(); 
-      var location  = new google.maps.LatLng(data.latitude, data.longitude);    
-      geocoder.geocode({'latLng': location}, function(results, status) {
-        window.parent.$('#from-text').val(results[0].formatted_address); 
-      });
-      
-      window.parent.$('#to-text').val("UCSD, San Diego, CA, United States"); 
-    });
-          
-    $(".js-example-basic-multiple").select2();
+    $("#ifs").select2();
     $(document).ready(function() {
       $("select").material_select();
     });
 
+    $("#help").on('click', function(){
+      console.log($("#ifs").val());
+    })
   </script>
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBR1B9bVju_rHI2zZOFkJqYaPmsGarntkQ&libraries=places&callback=initMap"></script>
 </html>
