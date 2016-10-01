@@ -92,7 +92,7 @@
       <main class="mdl-layout__content">
         <div class="mdl-layout__tab-panel is-active" id="overview">
           <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
-            <div class="mdl-card mdl-cell mdl-cell--12-col">
+            <div class="mdl-card mdl-cell--12-col">
               <div class="mdl-card__supporting-text" id="formheader">
                 <h4>My Trip Info</h4>
                 please provide the requirements of your trip!
@@ -110,21 +110,36 @@
                       <label for="to-text">To</label>
                     </div>
 
-                    <div class="input-field col s11">
-                      <select id="ifs" class="js-example-basic-multiple" multiple="multiple">
-                        <optgroup label="team 1">
-                          <option value="1">Option 1</option>
-                          <option value="2">Option 2</option>
+                    <div class="input-field col s12">
+                      <div class="mdl-card__supporting-text">
+                        <h4>IF I want to:</h4>
+                        Please provide us with your requirements before trip and means of transportations.
+                      </div>
+                      <select id="ifs" class="js-example-basic-multiple validate" multiple="multiple" style="width: 100%">
+                        <optgroup label="Things To Do">
+                          <option value="1">Shower</option>
+                          <option value="2">Breakfast</option>
                         </optgroup>
-                        <optgroup label="team 2">
-                          <option value="3">Option 3</option>
-                          <option value="4">Option 4</option>
+                        <optgroup label="Transportation">
+                          <option value="3">Bus</option>
+                          <option value="4">Uber</option>
                         </optgroup>
                       </select>
                     </div>
                   </div>
                 </form>
               </div>
+            </div>
+            <div class="maps-frame mdl-cell mdl-cell--12-col">
+              <script>
+                $.getJSON("http://freegeoip.net/json/?callback=?", function(data){
+                  console.log("Lat: " + data.latitude + " Long: " + data.longitude);
+                  $("#mapframe").attr("src", "https://www.google.com/maps/embed/v1/directions?origin="+data.latitude+","+data.longitude+"&destination=SDSU&key=AIzaSyDp1ey8ETTNdh9I_VeSpkpDCQPMB4e2Y2o");
+                });
+
+              </script>
+              <iframe id = "mapframe" width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/directions?origin=UCSD&destination=SDSU&key=AIzaSyDp1ey8ETTNdh9I_VeSpkpDCQPMB4e2Y2o" allowfullscreen>
+              </iframe>
             </div>
           </section>
           </div>
@@ -136,18 +151,6 @@
 
           </div>
         </footer>
-			  <div class="maps-frame">
-	    <script>
-		$.getJSON("http://freegeoip.net/json/?callback=?", function(data){
-			console.log("Lat: " + data.latitude + " Long: " + data.longitude);
-			$("#mapframe").attr("src", "https://www.google.com/maps/embed/v1/directions?origin="+data.latitude+","+data.longitude+"&destination=SDSU&key=AIzaSyDp1ey8ETTNdh9I_VeSpkpDCQPMB4e2Y2o");
-		});
-		
-		</script>
-		<iframe id = "mapframe" width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/directions?origin=UCSD&destination=SDSU&key=AIzaSyDp1ey8ETTNdh9I_VeSpkpDCQPMB4e2Y2o" allowfullscreen>
-		</iframe>
-		</div>
-    </div>
       </main>
     </div>
 	
