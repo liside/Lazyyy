@@ -136,8 +136,21 @@
 
           </div>
         </footer>
+			  <div class="maps-frame">
+	    <script>
+		$.getJSON("http://freegeoip.net/json/?callback=?", function(data){
+			console.log("Lat: " + data.latitude + " Long: " + data.longitude);
+			$("#mapframe").attr("src", "https://www.google.com/maps/embed/v1/directions?origin="+data.latitude+","+data.longitude+"&destination=SDSU&key=AIzaSyDp1ey8ETTNdh9I_VeSpkpDCQPMB4e2Y2o");
+		});
+		
+		</script>
+		<iframe id = "mapframe" width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/directions?origin=UCSD&destination=SDSU&key=AIzaSyDp1ey8ETTNdh9I_VeSpkpDCQPMB4e2Y2o" allowfullscreen>
+		</iframe>
+		</div>
+    </div>
       </main>
     </div>
+	
 
     <div class="fixed-action-btn vertical" style="bottom: 10%; right: 5%;">
       <div class="btn-floating btn-large red">
