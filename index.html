@@ -129,6 +129,7 @@
                           <optgroup label="Transportation">
                             <option value="3">Bus</option>
                             <option value="4">Uber</option>
+							<option value="5">Walking</option>
                           </optgroup>
                         </select>
                         <br>
@@ -199,7 +200,11 @@
   <script src="https://code.getmdl.io/1.2.1/material.min.js"></script>
   <script src="js/indexAnimation.js" type="text/javascript"></script>
   <script type="text/javascript">
-    var service;
+	var map = {1:"Shower", 2:"Breakfast", 3:"TRANSIT", 4:"DRIVING", 5:"WALKING"};
+	var action = {"Shower":900, "Breakfast":1800};
+	var esttime;
+	var current_events = [];
+    var current_way = 'WALKING';
 
     function updateMap(origin, destination){
       $("#mapframe").attr("src", "https://www.google.com/maps/embed/v1/directions?origin="+origin+"&destination="+destination+"&key=AIzaSyDp1ey8ETTNdh9I_VeSpkpDCQPMB4e2Y2o");
@@ -207,17 +212,43 @@
     };
 
     function getDuration(origin, destination){
+	  console.log(current_way);
       service.getDistanceMatrix({
         origins: [origin],
         destinations: [destination],
-        travelMode: 'DRIVING',
+        travelMode: current_way,
         unitSystem: google.maps.UnitSystem.METRIC,
         avoidHighways: false,
         avoidTolls: false
       }, function(response, status){
-        console.log(response);
+        console.log(response.rows[0].elements[0].duration.value);
+		console.log(response);
+		esttime = response.rows[0].elements[0].duration.value;
+		getLeaveTime();
       });
     };
+	
+	function getLeaveTime(){
+		var input_time = $("#time-text").val();
+		console.info(parseTime(input_time)); 
+	}
+	
+	function parseTime(time){
+	  var hour = 12;
+	  var minute = 00;
+	  if(time == "") return "ERROR!";
+	  var time_arr = time.split(":");
+	  hour = parseInt(time_arr[0]);
+	  minute = parseInt(time_arr[1]);
+	  //console.info(hour);
+	  //console.info(minute);
+	  var current_time_in_sec = hour * 3600 + minute * 60;
+	  var leave_time_in_sec = current_time_in_sec - esttime;
+	  //console.info("C " + current_time_in_sec);
+	  //console.info("L " + leave_time_in_sec);
+	  //console.info("E " + esttime);
+	  return Math.floor(leave_time_in_sec / 3600) + ":" + Math.floor((leave_time_in_sec % 3600) / 60);
+	}
 
     function initMap(){
       service = new google.maps.DistanceMatrixService;
@@ -252,7 +283,19 @@
 
     $("#help").on('click', function(){
       console.log($("#ifs").val());
-    })
+	  var list = $("#ifs").val();
+	  console.info(list);
+	  //console.info(list.length);
+	  for(var i = 0; i < list.length; i++){
+		if(list[i] < 3){
+			current_events.push(i);
+		} else {
+			current_way = map[list[i]];
+			console.info(current_way);
+		}
+	  }
+	  getDuration($("#from-text").val(), $("#to-text").val());
+    });
   </script>
   <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBR1B9bVju_rHI2zZOFkJqYaPmsGarntkQ&libraries=places&callback=initMap"></script>
 </html>
