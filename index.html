@@ -125,11 +125,17 @@
                           <optgroup label="Things To Do">
                             <option value="1">Shower</option>
                             <option value="2">Breakfast</option>
+							<option value="3">Meal</option>
+							<option value="4">Shopping a bit</option>
+							<option value="5">Shopping a lot</option>
+							<option value="6">Walk my pet</option>
+							<option value="7">Workout</option>
+							<option value="8">Check-in Luggage</option>
                           </optgroup>
                           <optgroup label="Transportation">
-                            <option value="3">Bus</option>
-                            <option value="4">Uber</option>
-							<option value="5">Walking</option>
+                            <option value="9">Bus</option>
+                            <option value="10">Uber</option>
+							<option value="11">Walking</option>
                           </optgroup>
                         </select>
                         <br>
@@ -200,8 +206,9 @@
   <script src="https://code.getmdl.io/1.2.1/material.min.js"></script>
   <script src="js/indexAnimation.js" type="text/javascript"></script>
   <script type="text/javascript">
-	var map = {1:"Shower", 2:"Breakfast", 3:"TRANSIT", 4:"DRIVING", 5:"WALKING"};
-	var action = {1:900, 2:1800};
+	//TODO
+	var map = {1:"Shower", 2:"Breakfast", 3:"Meal", 4:"Shopping a bit", 5:"Shopping a lot", 6:"Walk my pet", 7:"Workout", 8:"Check-in Luggage", 9:"TRANSIT", 10:"DRIVING", 11:"WALKING"};
+	var action = {1:900, 2:1800, 3:3600, 4:1800, 5:5400, 6:1800, 7:3600, 8:1800};
 	var color_mode = 0;
 	
 	var esttime;
@@ -245,15 +252,19 @@
 	  var current_time_in_sec = hour * 3600 + minute * 60;
 	  
 	  for(var i = 0; i < list.length; i++){	
-			if(list[i] < 3){
+			// TODO
+			if(list[i] < 9){
 				current_time_in_sec = current_time_in_sec - action[list[i]];
 				console.info("G " + action[list[i]]);
 			}
 	  }
+	  
+	  // the leave time in sec
 	  var leave_time_in_sec = current_time_in_sec - esttime - (color_mode * 20 * 60);
 	  var leave_hour = Math.floor(leave_time_in_sec / 3600);
 	  var leave_minute = Math.floor((leave_time_in_sec % 3600) / 60);
 	  
+	  // add time back to underflow time
 	  while(leave_hour < 0){
 			leave_hour = leave_hour + 24;
 	  }
@@ -262,8 +273,15 @@
 			leave_minute = leave_minute + 60;
 	  }
 	  
+	  // add a padding 0 infront of the minute if it is less than 10
+	  if(leave_minute < 10){
+		return  leave_hour+ ":" + "0" + leave_minute;
+	  } else {
+		return  leave_hour+ ":" + leave_minute;
+	  }
+	
 	  
-	  return  leave_hour+ ":" + leave_minute;
+	  
 	}
 
     function initMap(){
@@ -302,7 +320,8 @@
 	  list = $("#ifs").val();
 	  console.info(list);
 	  for(var i = 0; i < list.length; i++){
-		if(list[i] > 2){
+		//TODO
+		if(list[i] > 8){
 			current_way = map[list[i]];
 			console.info(current_way);
 		}
