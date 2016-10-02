@@ -16,53 +16,53 @@
   limitations under the License
 -->
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
-    <title>Lazzy Trip Planner</title>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <title>Lazzy Trip Planner</title>
 
-    <!-- Add to homescreen for Chrome on Android -->
-    <meta name="mobile-web-app-capable" content="yes">
-    <link rel="icon" sizes="192x192" href="images/android-desktop.png">
+  <!-- Add to homescreen for Chrome on Android -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <link rel="icon" sizes="192x192" href="images/android-desktop.png">
 
-    <!-- Add to homescreen for Safari on iOS -->
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black">
-    <meta name="apple-mobile-web-app-title" content="Material Design Lite">
-    <link rel="apple-touch-icon-precomposed" href="images/ios-desktop.png">
+  <!-- Add to homescreen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="Material Design Lite">
+  <link rel="apple-touch-icon-precomposed" href="images/ios-desktop.png">
 
-    <!-- Tile icon for Win8 (144x144 + tile color) -->
-    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
-    <meta name="msapplication-TileColor" content="#3372DF">
+  <!-- Tile icon for Win8 (144x144 + tile color) -->
+  <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+  <meta name="msapplication-TileColor" content="#3372DF">
 
-    <link rel="shortcut icon" href="images/favicon.png">
+  <link rel="shortcut icon" href="images/favicon.png">
 
-    <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
+  <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
     <!--
     <link rel="canonical" href="http://www.example.com/">
-    -->
+  -->
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.deep_purple-pink.min.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <!--Import Google Icon Font-->
-    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <!--Import materialize.css-->
-    <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
-    <!--Import select2.css-->
-    <link type="text/css" rel="stylesheet" href="css/select2.min.css"/>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.2.1/material.deep_purple-pink.min.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <!--Import Google Icon Font-->
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+  <!--Import select2.css-->
+  <link type="text/css" rel="stylesheet" href="css/select2.min.css"/>
 
-    <!--Let browser know website is optimized for mobile-->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-    <script type="text/javascript" src="js/materialize.min.js"></script>
-    <script type="text/javascript" src="js/select2.min.js"></script>
+  <!--Let browser know website is optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <script type="text/javascript" src="js/select2.min.js"></script>
 
 
-    <style>
+  <style>
     #view-source {
       position: fixed;
       display: block;
@@ -72,193 +72,228 @@
       margin-bottom: 40px;
       z-index: 900;
     }
-    </style>
-  </head>
-  <body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-      <header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary" id="header">
-        <div class="mdl-layout--large-screen-only mdl-layout__header-row">
-        </div>
-        <div class="mdl-layout--large-screen-only mdl-layout__header-row">
-          <h1 style="font-family: lazyyyfont">Lazyyy</h1>
-        </div>
-        <div class="mdl-layout--large-screen-only mdl-layout__header-row">
-        </div>
-        <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark orange accent-2" id="toolbar">
-          <a href="#overview" class="mdl-layout__tab is-active">Plan Me the Trip</a>
-          <a href="#faq" class="mdl-layout__tab">FAQ</a>
-        </div>
-      </header>
-      <main class="mdl-layout__content">
-        <div class="mdl-layout__tab-panel is-active" id="overview">
-          <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
-            <div class="mdl-card mdl-cell--12-col">
-              <div class="mdl-card__supporting-text" id="formheader">
-                <h4>My Trip Info</h4>
-                please provide the requirements of your trip!
-                Select at the right bottom corner if you run a tight or slacky schedule.
-              </div>
-              <div class="mdl-card mdl-cell mdl-cell--12-col" id="form">
-                <form class="col s12">
-                  <div class="row">
-                    <div class="input-field col l4 m6 s12">
-                      <i class="material-icons prefix">room</i>
-                      <input placeholder="" id="from-text" type="text" class="validate">
-                      <label for="from-text">From</label>
-                    </div>
-
-                    <div class="input-field col l4 m6 s12">
-                      <i class="material-icons prefix">my_location</i>
-                      <input placeholder="" id="to-text" type="text" class="validate">
-                      <label for="to-text">To</label>
-                    </div>
-
-                    <div class="input-field col l4 m6 s12">
-                      <i class="material-icons prefix">av_timer</i>
-                      <input id="time-text" type="time" class="validate">
-                    </div>
-
-                    <div class="input-field col s12">
-                      <div class="mdl-card__supporting-text">
-                        <h2 style="font-family: lazyyyfont">IF I Also Want To:</h2>
-                        <select id="ifs" class="js-example-basic-multiple validate" multiple="multiple" style="width: 100%">
-                          <optgroup label="Things To Do">
-                            <option value="1">Shower</option>
-                            <option value="2">Breakfast</option>
-							<option value="3">Meal</option>
-							<option value="4">Shopping a bit</option>
-							<option value="5">Shopping a lot</option>
-							<option value="6">Walk my pet</option>
-							<option value="7">Workout</option>
-							<option value="8">Check-in Luggage</option>
-                          </optgroup>
-                          <optgroup label="Transportation">
-                            <option value="9">Bus</option>
-                            <option value="10">Uber</option>
-							<option value="11">Walking</option>
-                          </optgroup>
-                        </select>
-                        <br>
-                        <br>
-                        <a class="mdl-cell--3-col btn-large orange accent-2" id="help" style="width: 100%">HELP MEOW!!!</a>
-                      </div>
-                    </div>
-
-                  </div>
-                </form>
-              </div>
-            </div>
-            <div class="maps-frame mdl-cell mdl-cell--12-col">
-              <iframe id = "mapframe" width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/directions?origin=UCSD&destination=SDSU&key=AIzaSyDp1ey8ETTNdh9I_VeSpkpDCQPMB4e2Y2o" allowfullscreen>
-              </iframe>
-            </div>
-          </section>
-          </div>
-        
-        <div class="mdl-layout__tab-panel" id="faq">
-          <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
-            <div class="mdl-card mdl-cell--12-col">
-          
-          <div class="mdl-card__supporting-text" id="formheader">
-                <h1 style="font-family: faqfont">FAQ</h1>
-                We know that you are lazy like us and won't look it through, but meow, just in case~
-              </div>
-          <ul class="collapsible" data-collapsible="accordion">
-            <li>
-              <div class="collapsible-header active"><i class="material-icons">whatshot</i>What is this app about?</div>
-              <div class="collapsible-body"><p>This is a super convenient trip planner. All you need to do is to tell us how tight your schedule is, what you want to do before leaving, and your preferred transportation options. We will handle the rest of the work for you!</p></div>
-            </li>
-            <li>
-              <div class="collapsible-header"><i class="material-icons">whatshot</i>How do I use this app?</div>
-              <div class="collapsible-body"><p>Tell us where your trip is going to start and end by typing them in the "From" and "To" boxes. If you have something to do before your trip, for example you have to take a shower or have a meal, let us know by looking them up under the giant "IF".</p></div>
-            </li>
-            <li>
-              <div class="collapsible-header"><i class="material-icons">whatshot</i>What should I do if I am running up late?</div>
-              <div class="collapsible-body"><p>There is a red circle with a clock sign on it at the bottom right corner of the main page. Please click on that to let us know how tight your schedule is. </p></div>
-            </li>
-          </ul>
-          </div> 
-          </section>
-        </div>
-        <footer class="mdl-mega-footer">
-          <div class="mdl-mega-footer--bottom-section">
-            <div class="mdl-logo">
-              All Right Reserved @Lazyyy team
-            </div>
-
-          </div>
-        </footer>
-      </main>
-    </div>
-	
-
-    <div class="fixed-action-btn vertical" style="bottom: 5%; right: 5%;">
-      <div class="btn-floating btn-large orange accent-2">
-        <i class="large material-icons" id="query">query_builder</i>
+  </style>
+</head>
+<body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+    <header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary" id="header">
+      <div class="mdl-layout--large-screen-only mdl-layout__header-row">
       </div>
-      <ul>
-        <li id="tight_btn"><a class="btn-floating red"><i class="material-icons" id="tight">assignment_late</i></a></li>
-        <li id="mediocre_btn"><a class="btn-floating yellow darken-1"><i class="material-icons" id="mediocre">done_all</i></a></li>
-        <li id="slacky_btn"><a class="btn-floating green"><i class="material-icons" id="slacky">games</i></a></li>
-      </ul>
+      <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+        <h1 style="font-family: lazyyyfont">Lazyyy</h1>
+      </div>
+      <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+      </div>
+      <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark orange accent-2" id="toolbar">
+        <a href="#overview" class="mdl-layout__tab is-active">Plan Me the Trip</a>
+        <a href="#faq" class="mdl-layout__tab">FAQ</a>
+      </div>
+    </header>
+    <main class="mdl-layout__content">
+      <div class="mdl-layout__tab-panel is-active" id="overview">
+        <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+          <div class="mdl-card mdl-cell--12-col">
+            <div class="mdl-card__supporting-text" id="formheader">
+              <h4>My Trip Info</h4>
+              please provide the requirements of your trip!
+              Select at the right bottom corner if you run a tight or slacky schedule.
+            </div>
+            <div class="mdl-card mdl-cell mdl-cell--12-col" id="form">
+              <form class="col s12">
+                <div class="row">
+                  <div class="input-field col l4 m6 s12">
+                    <i class="material-icons prefix">room</i>
+                    <input placeholder="" id="from-text" type="text" class="validate">
+                    <label for="from-text">From</label>
+                  </div>
+
+                  <div class="input-field col l4 m6 s12">
+                    <i class="material-icons prefix">my_location</i>
+                    <input placeholder="" id="to-text" type="text" class="validate">
+                    <label for="to-text">To</label>
+                  </div>
+
+                  <div class="input-field col l4 m6 s12">
+                    <i class="material-icons prefix">av_timer</i>
+                    <input id="time-text" type="time" class="validate">
+                  </div>
+
+                  <div class="input-field col s12">
+                    <div class="mdl-card__supporting-text">
+                      <h2 style="font-family: lazyyyfont">IF I Also Want To:</h2>
+                      <select id="ifs" class="js-example-basic-multiple validate" multiple="multiple" style="width: 100%">
+                        <optgroup label="Transportation">
+                          <option value="9">Bus</option>
+                          <option value="10">Uber</option>
+                          <option value="11">Walking</option>
+                        </optgroup>
+
+                        <optgroup label="Things To Do">
+                          <option value="1">Shower</option>
+                          <option value="2">Breakfast</option>
+                          <option value="3">Meal</option>
+                          <option value="4">Shopping a bit</option>
+                          <option value="5">Shopping a lot</option>
+                          <option value="6">Walk my pet</option>
+                          <option value="7">Workout</option>
+                          <option value="8">Check-in Luggage</option>
+                        </optgroup>
+                      </select>
+                      <br>
+                      <br>
+                      <a class="mdl-cell--3-col btn-large orange accent-2" id="help" style="width: 100%">HELP MEOW!!!</a>
+                    </div>
+                  </div>
+
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="maps-frame mdl-cell mdl-cell--12-col">
+            <iframe id = "mapframe" width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/directions?origin=UCSD&destination=SDSU&key=AIzaSyDp1ey8ETTNdh9I_VeSpkpDCQPMB4e2Y2o" allowfullscreen>
+            </iframe>
+          </div>
+        </section>
+      </div>
+
+      <div class="mdl-layout__tab-panel" id="faq">
+        <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+          <div class="mdl-card mdl-cell--12-col">
+
+            <div class="mdl-card__supporting-text" id="formheader">
+              <h1 style="font-family: faqfont">FAQ</h1>
+              We know that you are lazy like us and won't look it through, but meow, just in case~
+            </div>
+            <ul class="collapsible" data-collapsible="accordion">
+              <li>
+                <div class="collapsible-header active"><i class="material-icons">whatshot</i>What is this app about?</div>
+                <div class="collapsible-body"><p>This is a super convenient trip planner. All you need to do is to tell us how tight your schedule is, what you want to do before leaving, and your preferred transportation options. We will handle the rest of the work for you!</p></div>
+              </li>
+              <li>
+                <div class="collapsible-header"><i class="material-icons">whatshot</i>How do I use this app?</div>
+                <div class="collapsible-body"><p>Tell us where your trip is going to start and end by typing them in the "From" and "To" boxes. If you have something to do before your trip, for example you have to take a shower or have a meal, let us know by looking them up under the giant "IF".</p></div>
+              </li>
+              <li>
+                <div class="collapsible-header"><i class="material-icons">whatshot</i>What should I do if I am running up late?</div>
+                <div class="collapsible-body"><p>There is a circle with a clock sign on it at the bottom right corner of the main page. Please click on that to let us know how tight your schedule is. </p></div>
+              </li>
+            </ul>
+          </div> 
+        </section>
+      </div>
+      <footer class="mdl-mega-footer">
+        <div class="mdl-mega-footer--bottom-section">
+          <div class="mdl-logo">
+            All Right Reserved @Lazyyy team
+          </div>
+
+        </div>
+      </footer>
+    </main>
+  </div>
+
+
+  <div class="fixed-action-btn vertical" style="bottom: 5%; right: 5%;">
+    <div class="btn-floating btn-large orange accent-2">
+      <i class="large material-icons" id="query">query_builder</i>
     </div>
-  </body>
-  <script src="https://code.getmdl.io/1.2.1/material.min.js"></script>
-  <script src="js/indexAnimation.js" type="text/javascript"></script>
-  <script type="text/javascript">
+    <ul>
+      <li id="tight_btn"><a class="btn-floating red"><i class="material-icons" id="tight">assignment_late</i></a></li>
+      <li id="mediocre_btn"><a class="btn-floating yellow darken-1"><i class="material-icons" id="mediocre">done_all</i></a></li>
+      <li id="slacky_btn"><a class="btn-floating green"><i class="material-icons" id="slacky">games</i></a></li>
+    </ul>
+  </div>
+
+  <div id="submit-modal" class="modal">
+      <div class="modal-content cat-content">
+
+        <div class="cat-container" style="width: 100%;">
+          <div class="cloud">
+            <span class="c-one"></span>
+            <span class="c-two"></span>
+            <span class="c-three"></span>
+            <span class="c-four"></span>
+          </div>
+
+
+          <div class="rainbow">
+            <span class="r-one"></span>
+            <span class="r-two"></span>
+            <span class="r-three"></span>
+          </div>
+
+          <div class="cat">
+            <span class="eyes left"></span>
+            <span class="eyes right"></span>
+            <span class="mouth"></span>
+          </div>    
+        </div>
+
+        
+      </div>
+
+    <div class="modal-footer" style="margin-top: 3%;">
+
+    </div>
+
+  </div>
+</body>
+<script src="https://code.getmdl.io/1.2.1/material.min.js"></script>
+<script src="js/indexAnimation.js" type="text/javascript"></script>
+<script type="text/javascript">
 	//TODO
 	var map = {1:"Shower", 2:"Breakfast", 3:"Meal", 4:"Shopping a bit", 5:"Shopping a lot", 6:"Walk my pet", 7:"Workout", 8:"Check-in Luggage", 9:"TRANSIT", 10:"DRIVING", 11:"WALKING"};
 	var action = {1:900, 2:1800, 3:3600, 4:1800, 5:5400, 6:1800, 7:3600, 8:1800};
-	var color_mode = 0;
+	var color_mode = 1;
 	
 	var esttime;
 	var list = $("#ifs").val();
-    var current_way = 'WALKING';
+  var current_way = 'WALKING';
+  var origin;
+  var destination;
+  var e = "Lazyyy+event";
+  var leaveTime;
 
-    function updateMap(origin, destination){
-      $("#mapframe").attr("src", "https://www.google.com/maps/embed/v1/directions?origin="+origin+"&destination="+destination+"&key=AIzaSyDp1ey8ETTNdh9I_VeSpkpDCQPMB4e2Y2o");
-      getDuration(origin, destination);
-    };
+  function updateMap(origin, destination){
+    $("#mapframe").attr("src", "https://www.google.com/maps/embed/v1/directions?origin="+origin+"&destination="+destination+"&key=AIzaSyDp1ey8ETTNdh9I_VeSpkpDCQPMB4e2Y2o");
+    getDuration(origin, destination);
+  };
 
-    function getDuration(origin, destination){
-	  console.log(current_way);
-      service.getDistanceMatrix({
-        origins: [origin],
-        destinations: [destination],
-        travelMode: current_way,
-        unitSystem: google.maps.UnitSystem.METRIC,
-        avoidHighways: false,
-        avoidTolls: false
-      }, function(response, status){
-        console.log(response.rows[0].elements[0].duration.value);
-		console.log(response);
-		esttime = response.rows[0].elements[0].duration.value;
-		getLeaveTime();
-      });
-    };
-	
-	function getLeaveTime(){
-		var input_time = $("#time-text").val();
-		console.info(parseTime(input_time)); 
-	}
-	
-	function parseTime(time){
-	  var hour = 12;
-	  var minute = 00;
-	  if(time == "") return "ERROR!";
-	  var time_arr = time.split(":");
-	  hour = parseInt(time_arr[0]);
-	  minute = parseInt(time_arr[1]);
-	  var current_time_in_sec = hour * 3600 + minute * 60;
-	  
-	  for(var i = 0; i < list.length; i++){	
+  function getDuration(origin, destination){
+    service.getDistanceMatrix({
+      origins: [origin],
+      destinations: [destination],
+      travelMode: current_way,
+      unitSystem: google.maps.UnitSystem.METRIC,
+      avoidHighways: false,
+      avoidTolls: false
+    }, function(response, status){
+      esttime = response.rows[0].elements[0].duration.value;
+    });
+  };
+
+  function getLeaveTime(callback){
+    var input_time = $("#time-text").val();
+    callback(parseTime(input_time));
+  }
+
+  function parseTime(time){
+   var hour = 12;
+   var minute = 00;
+   if(time == "") return "ERROR!";
+   var time_arr = time.split(":");
+   hour = parseInt(time_arr[0]);
+   minute = parseInt(time_arr[1]);
+   var current_time_in_sec = hour * 3600 + minute * 60;
+
+   for(var i = 0; i < list.length; i++){	
 			// TODO
 			if(list[i] < 9){
 				current_time_in_sec = current_time_in_sec - action[list[i]];
 				console.info("G " + action[list[i]]);
 			}
-	  }
-	  
+   }
+
 	  // the leave time in sec
 	  var leave_time_in_sec = current_time_in_sec - esttime - (color_mode * 20 * 60);
 	  var leave_hour = Math.floor(leave_time_in_sec / 3600);
@@ -266,68 +301,112 @@
 	  
 	  // add time back to underflow time
 	  while(leave_hour < 0){
-			leave_hour = leave_hour + 24;
-	  }
-	  
-	  while(leave_minute < 0){
-			leave_minute = leave_minute + 60;
-	  }
-	  
+     leave_hour = leave_hour + 24;
+   }
+
+   while(leave_minute < 0){
+     leave_minute = leave_minute + 60;
+   }
+
 	  // add a padding 0 infront of the minute if it is less than 10
 	  if(leave_minute < 10){
-		return  leave_hour+ ":" + "0" + leave_minute;
-	  } else {
-		return  leave_hour+ ":" + leave_minute;
-	  }
-	
-	  
-	  
-	}
+      return  leave_hour+ ":" + "0" + leave_minute;
+    } else {
+      return  leave_hour+ ":" + leave_minute;
+    }
+  }
 
-    function initMap(){
-      service = new google.maps.DistanceMatrixService;
-      var input1 = document.getElementById('from-text');
-      var input2 = document.getElementById('to-text');
-      autocomplete1 = new google.maps.places.Autocomplete(input1);
-      autocomplete2 = new google.maps.places.Autocomplete(input2);
-      google.maps.event.addListener(autocomplete1, 'place_changed', function(){
-        updateMap($("#from-text").val(), $("#to-text").val());
-      });
-      google.maps.event.addListener(autocomplete2, 'place_changed', function(){
-        updateMap($("#from-text").val(), $("#to-text").val());
-      });
-      
-      $.getJSON("http://freegeoip.net/json/?callback=?", function(data){
-        updateMap(data.latitude + ',' + data.longitude, 'UCSD');
-        var geocoder  = new google.maps.Geocoder(); 
-        var location  = new google.maps.LatLng(data.latitude, data.longitude); 
+  function initMap(){
+    service = new google.maps.DistanceMatrixService;
+    var input1 = document.getElementById('from-text');
+    var input2 = document.getElementById('to-text');
+    autocomplete1 = new google.maps.places.Autocomplete(input1);
+    autocomplete2 = new google.maps.places.Autocomplete(input2);
+    google.maps.event.addListener(autocomplete1, 'place_changed', function(){
+      updateMap($("#from-text").val(), $("#to-text").val());
+    });
+    google.maps.event.addListener(autocomplete2, 'place_changed', function(){
+      updateMap($("#from-text").val(), $("#to-text").val());
+    });
 
-        geocoder.geocode({'latLng': location}, function(results, status) {
-          window.parent.$('#from-text').val(results[0].formatted_address); 
-        });
+    $.getJSON("http://freegeoip.net/json/?callback=?", function(data){
+      updateMap(data.latitude + ',' + data.longitude, 'UCSD');
+      var geocoder  = new google.maps.Geocoder(); 
+      var location  = new google.maps.LatLng(data.latitude, data.longitude); 
+
+      geocoder.geocode({'latLng': location}, function(results, status) {
+        window.parent.$('#from-text').val(results[0].formatted_address); 
+      });
         //window.parent.$('#from-text').val(data.latitude + ',' + data.longitude); 
         window.parent.$('#to-text').val("University of California San Diego, 9500 Gilman Drive, La Jolla, CA 92093"); 
       });
-    };
+  };
 
-    $("#ifs").select2();
-    $(document).ready(function() {
-      $("select").material_select();
-    });
+  $("#ifs").select2();
+  $(document).ready(function() {
+    $("select").material_select();
+  });
 
-    $("#help").on('click', function(){
-      console.log($("#ifs").val());
-	  list = $("#ifs").val();
-	  console.info(list);
-	  for(var i = 0; i < list.length; i++){
-		//TODO
-		if(list[i] > 8){
-			current_way = map[list[i]];
-			console.info(current_way);
-		}
-	  }
-	  getDuration($("#from-text").val(), $("#to-text").val());
-    });
-  </script>
-  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBR1B9bVju_rHI2zZOFkJqYaPmsGarntkQ&libraries=places&callback=initMap"></script>
+
+  $("#help").on('click', function(){
+   list = $("#ifs").val();
+   for(var i = 0; i < list.length; i++){
+    if(list[i] > 8){
+      current_way = map[list[i]];
+    }
+  }
+
+  origin = $("#from-text").val();
+  destination = $("#to-text").val();
+  getDuration(origin, destination);
+  getLeaveTime(function(time){
+    leaveTime = time;
+
+    $('#submit-modal').openModal(); 
+    var date = new Date();
+    var hour = date.getHours();
+    var minute = date.getMinutes();
+    var hour2 = parseInt(time.split(':')[0]);
+    var minute2 = parseInt(time.split(':')[1]);
+
+    if (hour2*60 + minute2 > hour*60 + minute + 20 || hour2*60 + minute2 < hour*60 + minute - 20){
+            //normal
+            $(".modal-footer").html('');
+            
+            
+            $(".modal-footer").append('<p id="help-text" style="text-align: center;"></p><a class="mdl-cell--3-col btn-large grey lighten-2 black-text" id="add-calendar" style="width: 100%">Add to calendar!!!</a>');
+            $("#help-text").text("DON'T WORRY. JUST START AT");
+            $("#help-text").append("<h3 > "+time+"</h3>");
+          } else{
+            $("#add-calendar").remove();
+            //TODO: call uber
+            
+            $(".modal-footer").append('<p id="help-text" style="text-align: center;"></p><a class="mdl-cell--3-col btn-large deep-orange darken-4" id="call-uber" style="width: 100%;">Call Uber!!!</a>');
+            $("#help-text").text("LIMITED TIME, CALL UBER!!!!");
+          }
+
+        });
+
+});
+
+  $(document).on('click', "#add-calendar", function(){
+    var date = new Date();
+    var detail = "MEOW!!!!";
+    date.setHours(leaveTime.split(":")[0]);
+    date.setMinutes(leaveTime.split(":")[1]);
+    date = date.toISOString().replace(/-|:|\.\d\d\d/g,"");
+    window.open(
+      'https://www.google.com/calendar/render?action=TEMPLATE&text='+e+'&dates='+date+'/'+date+'&details='+detail+'&sf=true&output=xml'
+      );
+  });
+
+  $(document).on('click', "#call-uber", function(){
+    window.open(
+      'https://m.uber.com/ul/?action=setPickup'
+      );
+  });
+
+
+</script>
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBR1B9bVju_rHI2zZOFkJqYaPmsGarntkQ&libraries=places&callback=initMap"></script>
 </html>
